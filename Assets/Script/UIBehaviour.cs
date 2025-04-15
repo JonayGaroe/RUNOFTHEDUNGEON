@@ -4,16 +4,31 @@ using UnityEngine;
 
 public class UIBehaviour : MonoBehaviour
 {
+    [SerializeField]
+    GameObject canvasInicio;
+
+    void Start()
+    {
+        canvasInicio.SetActive(true);
+    }
     void Update()
     {
-        if (Input.anyKeyDown)
+        if (canvasInicio==true)
         {
-            EmpezarJuego();
+            if (Input.anyKeyDown)
+            {
+                EmpezarJuego();
+            }
         }
+        else
+        {
+
+        }
+        
     }
 
     void EmpezarJuego()
     {
-
+        canvasInicio.SetActive(false);
     }
 }
